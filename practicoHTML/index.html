@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Estructura Básica del Documento HTML</h1>
+    <p>Este documento HTML contiene una estructura basica con declaracion de DOCTYPE, etiquetas metadatos y un titulo</p>
+    </header>
+    <section>
+        <h1>Encabezado principal</h1>
+    <nav>
+        <a href="#encabezado">Encabezados</a><br>
+        <a href="#agrupacionesDeContenido">agrupaciones de contenido</a><br>
+        <a href="#enlacesLista">enlaces y lista</a><br>
+        <a href="#Multimedia">multimedia</a><br>
+        <a href="#tablas">tablas</a><br>
+        <a href="#formularios">formularios</a><br>
+    </nav>
+    <h1 id="encabezado">Encabezados y Propiedades del Texto</h1>
+    <h3 style="font-weight: bold;">texto en negrita</h3>
+    <h4 style="text-decoration: underline;">texto subrayado</h4>
+    <h5 style="font-style: italic;">texto en cursiva</h5>
+    <h1 id="agrupacionesDeContenido">Divisiones y Agrupación de Contenido</h1>
+    <div>
+        <h1 style="font-weight: bold;">titulo primera seccion</h1>
+        <p>contenido primera seccion</p>
+    </div>
+    <div>
+        <h1 style="font-weight: bold;">titulo segunda seccion</h1>
+        <p>contenido segunda seccion</p>
+    </div>
+    <h1 id="enlacesLista">Enlaces y Listas</h1>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=-RvhIpfucLs&list=RD-RvhIpfucLs&start_radio=1">link 1</a></li>
+        <li><a href="https://www.google.com/">link 2</a></li>
+        <li><a href="https://www.4chan.org/">link 3</a></li>
+    </ul>
+    <h1 id="Multimedia">Elementos Multimedia</h1>
+    <h2>Imagen Ejemplo</h2>
+    <img src="GLjLiMEXUAE2TP4.jpg" alt="" height="250" width="320">
+    <h2>Video Ejemplo</h2>
+    <video width="320" height="240" controls>
+        <source src="terry davis just wants to dance.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+    <h2>Audio Ejemplo</h2>
+    <audio controls>
+        <source src="SONIDO DE ATURDIMIENTO _ ZUMBIDO O PITIDO EN EL OIDO.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+    <h1 id="tablas">Tablas</h1>
+    <h2>Ejemplo de Tabla con Encabezado y Cuerpo</h2>
+    <table>
+       
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>30</td>
+                <td>Madrid</td>
+            </tr>
+            <tr>
+                <td>Ana Gómez</td>
+                <td>25</td>
+                <td>Barcelona</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1 id="formularios">Formularios</h1>
+    <h2>Formulario de Contacto</h2>
+
+    <form action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
+
+        <input type="submit" value="Enviar">
+    </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Mi Página Web. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
