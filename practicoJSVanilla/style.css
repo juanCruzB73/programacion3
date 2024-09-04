@@ -1,0 +1,19 @@
+p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+div{
+  border: 1px solid black;
+  padding: 8px;
+  margin: 15px;
+}
+input:disabled {
+  background-color: #e9ecef; /* Color de fondo gris */
+  cursor: not-allowed; /* Cursor no permitido */
+}
+
+/* Estilo para el campo de texto cuando está habilitado */
+input:enabled {
+  background-color: white; /* Color de fondo blanco */
+  cursor: text; /* Cursor de texto */
+}

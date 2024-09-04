@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar color de párrafos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div>
+    <p>Este es el primer párrafo.</p>
+    <p>Este es el segundo párrafo.</p>
+    <p>Este es el tercer párrafo.</p>
+
+    <button type="button" id="button1">Cambiar color a azul</button>
+   </div>
+
+    <div>
+      <form id="miFormulario">
+        <label for="texto">Escribe algo:</label>
+        <input type="text" id="texto" name="texto">
+        <button type="button" id="button2">Mostrar valor</button>
+      </form>
+    </div>
+    <div>
+      <form id="miFormulario2">
+        <label for="texto">Escribe algo:</label>br
+        <input type="text" id="texto2" name="texto">
+        <button type="button" id="button3">añadir elemento</button>
+      </form>
+      <ul id="elementList">
+        <li>element1</li>
+        <li>element2</li>
+      </ul>
+    </div>
+    <div>
+      <input type="text" id="campoTexto" placeholder="Escribe algo aquí">
+      <button id="btnDeshabilitar">Deshabilitar</button>
+      <button id="btnHabilitar">Habilitar</button>
+    </div>
+    <div>
+      <form id="localStroageForm">
+        <input type="text" id="localStroage" placeholder="Escribe algo"><button type="button" id="saveEmail">guardar correo</button>
+        <h2>email guardado: <p id="savedEmail"></p></h2>
+        <button type="button" id="ereaseEmail">borrar correo</button>
+      </form>
+    </div>
+  <script src="main.js"></script>
+</body>
+</html>
