@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Integradors</title>
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <div class="headerAux">
+          <div class="headerSearch">
+            <input  class="inputSearch" type="text" placeholder="Buscar" >
+            <button id="buttonSeach"  class="searchButton">
+              Buscar <span class="material-symbols-outlined">search</span>
+            </button>
+          </div>
+          <div class="headerAdd">
+            <button class="addProductBututton">
+              Agregar producto <span class="material-symbols-outlined">add</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container_view">
+        <aside class="listAside">
+          <h2>Categorias<span class="material-symbols-outlined">category</span></h2>
+          <ul id="listFilter"></ul>
+        </aside>
+        <div class="store" id="storeContainer"></div>
+      </div>
+
+      <div id="modalPopUpContainer" class="popUpContainer_principal">
+        <div class="popUpContainer">
+          <div class="titlePopUp"><h2>Agregar o modificar un producto</h2></div>
+          <div class="containerInputs">
+            <input type="text" id="name" placeholder="Ingrese un nombre">
+            <input type="text" id="img" placeholder="Ingrese una imagen">
+            <input type="number" placeholder="precio" value="0" id="price">
+            <select name="" id="category">
+              <option value="">seleccione una categoria</option>
+              <option value="gaseosas">gaseosas</option>
+              <option value="hamburguesas">hambuergesas</option>
+              <option value="papas">papas</option>
+            </select>
+          </div>
+          <div class="popUpButtons">
+            <button class="button-popUpu-cancel" id="cancel">Cancelar</button>
+            <button class="button-popUp-acept" id="acept">Aceptar</button>
+            <button class="button-popUp-erase" id="erase">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
