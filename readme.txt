@@ -1,3 +1,4 @@
 nombre: juan cruz berrios
 segundo año
-lol
+paso 1: npm int
+paso 2: npm run dev
