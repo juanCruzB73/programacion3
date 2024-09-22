@@ -10,21 +10,8 @@ Crea un método para mostrar el estado actual del coche.
  */
 
 class Car {
-	brand: string;
-
-	model: string;
-
-	speed: number;
-
-	state: boolean;
+	constructor(public brand:string,public model:string, public speed:number,public  state:boolean){}
 	
-	  constructor(brand: string, model: string, speed: number, state: boolean) {
-   		 this.brand = brand;
-    		 this.model = model;
-		 this.speed=speed;
-		 this.state=state;
-  	  }
-
 	speedUp(speed:number):number{
 		return speed+1;
 	};
@@ -71,16 +58,106 @@ car1.turnOnAndOf(car1.state);
 console.log(car1.state);
 
 //ejercicio 2;
-/*
-Ejercicio 2: Peticiones Asíncronas con Fetch
-Descripción: Realiza una petición fetch a una API pública (por ejemplo, jsonplaceholder)
- para obtener una lista de tareas y filtra aquellas que están completadas.
-Requerimientos:
-Usa fetch para realizar la petición.
-Define una interfaz para los datos recibidos.
-Filtra las tareas completadas y muéstralas en la consola.
+const api="https://jsonplaceholder.typicode.com/todos"
+const getFetch=async()=>{
+	try{
+		const result=await fetch(api);
+		const data=await result.json();
+		return data;
+	}catch(error){
+		return error.message;
+	}
+}
+getFetch().then(data=>{
+	let dataArray=[];
+	for(let i=0;i<20;i++){
+		dataArray.push(data[i]);
+	}
+	let dataFiltered=dataArray.filter(e=>e.completed==true);
+	let divEjercicio2=document.querySelector("#ejercicio2")!;
+	dataFiltered.forEach(e=>{
+		divEjercicio2.innerHTML+=`
+			<div style="border:1px solid black">
+				<p><b>tareaNro: </b>${e.id}</p>
+				<p><b>title: </b>${e.title}</p>
+				<p><b>status: </b>${e.completed}</p>
+			</div>
+		`
+	})
+}).catch(error=>console.log(error))
 
-link de api: https://jsonplaceholder.typicode.com/todos
+//ejercicio3
+/*
+Ejercicio 3: Movimiento de un Cubo dentro de un Contenedor
+Descripción: Vamos a crear un cubo que se moverá dentro de 
+un contenedor cuando el usuario presione las teclas de flecha
+ (arriba, abajo, izquierda, derecha). El cubo deberá mantenerse dentro de los límites del contenedor.
+
+Requerimientos:
+
+1)Crea un contenedor div que actúe como el área de movimiento. 
+2)Crea un div más pequeño dentro del contenedor que representará el cubo.
+3)Usa TypeScript para manejar los eventos del teclado y mover el cubo dent
+ro del contenedor.
+    --crea una clase cubo la cual debe tener como propiedad: areaMovimient
+oElement, cuboElement, velocidadDeMovimiento 
+    --define los metodos: moverArriba, moverAbajo, moverDerecha, moverIzqu
+ierda
+    --Asegúrate de que el cubo no se salga del contenedor.
+4)Instancia tu clase cubo con sus propiedades
+5)Define un evento para escuchar las teclas y que se disparen los metodos 
+del objetooo
+
+
+Palabras claves para resolver el ejercicio:
+--position: relative
+--position: absolute
+--top
+--left
+--clientHeight
+--clientWidth
+--offsetTop
+--offsetLeft
+--keydown
 */
+document.addEventListener('DOMContentLoaded',()=>{
+
+const container = document.querySelector(".squareContainer");
+const square = document.querySelector(".square");
+
+if(!container || !(square instanceof HTMLElement)){
+	console.log("1235")
+	return;
+}
+
+let squareX = 0;
+let squareY = 0;
+const squareSize = 100;
+const containerSize = 500;
+
+document.addEventListener("keydown", (e: KeyboardEvent)=>{
+	e.preventDefault()
+    switch (e.key) {
+        case "ArrowUp":
+            console.log("arriba")
+            squareY > 0 ? squareY -= 10 : squareY = squareY;
+            break;
+        case "ArrowRight":
+			console.log("left")
+            squareX + squareSize < containerSize ? squareX += 10 : squareX = squareX;
+            break;
+		case "ArrowDown":
+			console.log("down")
+			//squareY >containerSize ? squareY -= 10: squareY=squareY;
+			squareY < containerSize-squareSize?squareY+=10:squareY=squareY;
+			break;
+		case "ArrowLeft":
+			console.log("rigth")
+			squareX>0?squareX-=10:squareX=squareX;
+	}
+	square.style.top = `${squareY}px`;
+    square.style.left = `${squareX}px`;
+});
+})
 
 
